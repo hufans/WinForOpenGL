@@ -11,7 +11,7 @@ LRESULT CALLBACK GLWindowProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
 	return DefWindowProc(hwnd, msg, wParam, lParam);
 }
 
-
+//Ã·ΩªµΩ¬Î‘∆
 INT WINAPI WinMain(HINSTANCE histance, HINSTANCE hPre, LPSTR lpCmLime, int nShowCmd)
 {
 	WNDCLASSEX wnddoss;
