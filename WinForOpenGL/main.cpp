@@ -11,7 +11,7 @@ LRESULT CALLBACK GLWindowProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
 	return DefWindowProc(hwnd, msg, wParam, lParam);
 }
 
-//提交到码云
+//修改测试代码
 INT WINAPI WinMain(HINSTANCE histance, HINSTANCE hPre, LPSTR lpCmLime, int nShowCmd)
 {
 	WNDCLASSEX wnddoss;
