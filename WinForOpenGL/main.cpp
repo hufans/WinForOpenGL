@@ -1,4 +1,6 @@
 #include "ggl.h"
+#include "scene.h"
+#pragma comment(lib,"opengl32.lib")
 LRESULT CALLBACK GLWindowProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
 {
 	switch (msg)
@@ -45,6 +47,23 @@ INT WINAPI WinMain(HINSTANCE histance, HINSTANCE hPre, LPSTR lpCmLime, int nShow
 	HWND hwnd = CreateWindowEx(NULL, L"GLWindow", L"OPenGL Window", WS_OVERLAPPEDWINDOW,
 		100, 100, windowWidth, windowHeight,
 		NULL, NULL, histance, NULL);
+
+	HDC dc = GetDC(hwnd);
+	PIXELFORMATDESCRIPTOR pfd;
+	memset(&pfd, 0, sizeof(PIXELFORMATDESCRIPTOR));
+	pfd.nVersion = 1;
+	pfd.nSize = sizeof(PIXELFORMATDESCRIPTOR);
+	pfd.cColorBits = 32;
+	pfd.cDepthBits = 24;
+	pfd.cStencilBits = 8;
+	pfd.iPixelType = PFD_TYPE_RGBA;
+	pfd.dwFlags = PFD_DRAW_TO_WINDOW | PFD_SUPPORT_OPENGL | PFD_DOUBLEBUFFER;
+	int PixelFormat = ChoosePixelFormat(dc, &pfd);
+	SetPixelFormat(dc, PixelFormat, &pfd);
+	HGLRC rc = wglCreateContext(dc);
+
+	wglMakeCurrent(dc, rc);
+	init();
 	ShowWindow(hwnd, SW_SHOW);
 	UpdateWindow(hwnd);
 	MSG msg;
@@ -60,6 +79,8 @@ INT WINAPI WinMain(HINSTANCE histance, HINSTANCE hPre, LPSTR lpCmLime, int nShow
 			TranslateMessage(&msg);
 			DispatchMessage(&msg);
 		}
+		Draw();
+		SwapBuffers(dc);
 	}
 	return 0;
 }

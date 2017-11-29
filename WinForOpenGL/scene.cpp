@@ -10,11 +10,16 @@ void Draw()
 {
 	glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
 	glClear(GL_COLOR_BUFFER_BIT);
-	glBegin(GL_TRIANGLE_FAN);
-	glColor4ub(255, 0, 0, 255); glVertex3f(0.0f, -0.25f, -2.5f);
-	glColor4ub(0, 0, 0, 255); glVertex3f(0.5f, -0.25f, -2.5f);
-	glColor4ub(0, 0, 0, 255); glVertex3f(0.0f, -0.25f, -2.5f);
-	glColor4ub(0, 0, 0, 255); glVertex3f(0.0f, -0.25f, -2.5f);
-	glColor4ub(0, 0, 0, 255); glVertex3f(0.0f, -0.25f, -2.5f);
+	glBegin(GL_TRIANGLES);
+
+	glColor4ub(255, 255, 255, 255);
+	glVertex3f(-0.2f, -0.2f, -1.5f);
+
+	glColor4ub(255, 0, 0, 255);
+	glVertex3f(0.2f, -0.2f, -1.5f);
+
+	glColor4ub(0, 255, 0, 255);
+	glVertex3f(0.0f, 0.2f, -1.5f);
+
 	glEnd();
 }
