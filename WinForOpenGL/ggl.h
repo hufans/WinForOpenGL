@@ -1,0 +1,14 @@
+#pragma once
+#include <windows.h>
+#include <gl/GLU.h>
+#include <GL/glew.h>
+#include <GL/glut.h>
+#include <GL/GL.h>
+#include <GL/freeglut_ext.h>
+#include <stdio.h>
+#include <math.h>
+#include <string.h>
+#include <string>
+#include <sstream>
+#include <vector>
+#include <functional>

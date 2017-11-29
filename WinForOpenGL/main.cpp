@@ -1,5 +1,4 @@
-#include <windows.h>
-
+#include "ggl.h"
 LRESULT CALLBACK GLWindowProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
 {
 	switch (msg)
