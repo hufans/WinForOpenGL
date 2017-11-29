@@ -10,7 +10,7 @@ void Draw()
 {
 	glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
 	glClear(GL_COLOR_BUFFER_BIT);
-	glBegin(GL_TRIANGLES);
+	glBegin(GL_QUADS);
 
 	glColor4ub(255, 255, 255, 255);
 	glVertex3f(-0.2f, -0.2f, -1.5f);
@@ -20,6 +20,9 @@ void Draw()
 
 	glColor4ub(0, 255, 0, 255);
 	glVertex3f(0.0f, 0.2f, -1.5f);
+
+	glColor4ub(0, 255, 255, 255);
+	glVertex3f(0.2f, 0.2f, -1.5f);
 
 	glEnd();
 }
