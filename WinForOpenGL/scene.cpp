@@ -6,23 +6,37 @@ void init() {
 	glLoadIdentity();
 }
 
-void Draw()
+
+void DrawModel(int V)
 {
-	glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
-	glClear(GL_COLOR_BUFFER_BIT);
-	glBegin(GL_QUADS);
-
-	glColor4ub(255, 255, 255, 255);
-	glVertex3f(-0.2f, -0.2f, -1.5f);
-
-	glColor4ub(255, 0, 0, 255);
-	glVertex3f(0.2f, -0.2f, -1.5f);
-
-	glColor4ub(0, 255, 0, 255);
-	glVertex3f(0.0f, 0.2f, -1.5f);
-
-	glColor4ub(0, 255, 255, 255);
-	glVertex3f(0.2f, 0.2f, -1.5f);
+	if (V == 3) 
+	{
+		glBegin(GL_TRIANGLES);
+		glColor4ub(129, 34, 255, 255);
+		glVertex3f(0.0f, -0.2f, -1.5f);
+		glVertex3f(-0.2f, 0.2f, -1.5f);
+		glVertex3f(0.2f, 0.2f, -1.5f);
+	}
+	if (V == 4 )
+	{
+		glBegin(GL_QUADS);
+		glColor4ub(255, 255, 255, 255);
+		glVertex3f(-0.5f, -0.2f, -0.5f);
+		glVertex3f(0.5f, -0.2f, -0.5f);
+		glVertex3f(0.5f, -0.2f, -1.0f);
+		glVertex3f(-0.5f, -0.2f, -1.0f);
+	}
 
 	glEnd();
+}
+
+
+void Draw()
+{
+	glClearColor(0.05f, 0.05f, 0.05f, 1.0f);
+	glClear(GL_COLOR_BUFFER_BIT);
+	glEnable(GL_LIGHTING);
+	DrawModel(3);
+	DrawModel(4);
+	
 }
