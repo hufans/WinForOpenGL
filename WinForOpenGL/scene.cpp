@@ -26,7 +26,7 @@ void DrawModel(int V)
 		glVertex3f(0.5f, -0.2f, -1.0f);
 		glVertex3f(-0.5f, -0.2f, -1.0f);
 	}
-	//test
+	//testFor current Path
 	glEnd();
 }
 
